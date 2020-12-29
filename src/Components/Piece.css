@@ -1,0 +1,14 @@
+.piece-board {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  border: 25px solid black;
+  position: absolute;
+}
+.piece {
+  display: inline-grid;
+  place-items: center;
+  margin: 0;
+  font-size: 50px;
+  cursor: pointer;
+}

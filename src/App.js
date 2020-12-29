@@ -1,24 +1,63 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Board from './Components/Board';
+import Pieces from './Components/Pieces';
 
 function App() {
+  const [playerTurn,setPlayerTurn] = useState(1);
+  const [martyred,setMartyred] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="info-col">
+        <div className="item">a</div>
+        <div className="item">b</div>
+        <div className="item">c</div>
+        <div className="item">d</div>
+        <div className="item">e</div>
+        <div className="item">f</div>
+        <div className="item">g</div>
+        <div className="item">h</div>
     </div>
+    <div className="main">
+      <div className="info-row">
+        <div className="item">1</div>
+        <div className="item">2</div>
+        <div className="item">3</div>
+        <div className="item">4</div>
+        <div className="item">5</div>
+        <div className="item">6</div>
+        <div className="item">7</div>
+        <div className="item">8</div>
+      </div>
+      <div className="board-body">  
+        <Pieces player={playerTurn} setPlayer={setPlayerTurn} martyr={martyred} setMartyr={setMartyred}></Pieces>
+        <Board ></Board>
+        
+      </div>
+      <div className="information-board"> 
+          <div className="player-info">Player
+          {
+            playerTurn===1?( 
+              <div className="player">White</div>
+            ):
+            (
+              <div className="player">Black</div>
+            )
+          }
+          </div>
+      </div>
+    </div>
+    <h1 style={{textAlign:'center'}}>Martyrs</h1>
+    <div className="martyrs-list">
+      {
+        martyred.map((item,i)=>{
+          return <div key={i} >{item}</div>
+        })
+      }
+    </div>
+    
+    </>
   );
 }
 

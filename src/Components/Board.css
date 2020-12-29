@@ -1,0 +1,19 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  border: 25px solid black;
+}
+
+.red-box {
+  display: inline-grid;
+  place-items: center;
+  margin: 0;
+  background-color: rgb(175, 136, 85);
+}
+.white-box {
+  display: inline-grid;
+  place-items: center;
+  margin: 0;
+  background-color: wheat;
+}

@@ -1,38 +1,58 @@
-.App {
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 100%;
+  margin-top: 5px;
+  padding-top: 10px;
+  position: relative;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.information-board {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+.martyrs-list {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: grid;
+  grid-template-columns: repeat(32, 40px);
+  grid-template-rows: repeat(2, 40px);
+  font-size: 35px;
 }
-
-.App-link {
-  color: #61dafb;
+.player-info {
+  font-size: 50px;
+  font-weight: 700;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player {
+  font-size: 40px;
+  font-weight: 500;
+}
+.board-body {
+  position: relative;
+}
+.info-row {
+  margin-right: 25px;
+  display: grid;
+  /* grid-template-columns: repeat(8, 100px); */
+  grid-template-rows: repeat(8, 80px);
+}
+.info-col {
+  margin-right: 160px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  /* grid-template-rows: repeat(8, 80px); */
+}
+.item {
+  display: inline-grid;
+  place-items: center;
+  margin: 0;
+  font-size: 25px;
 }
