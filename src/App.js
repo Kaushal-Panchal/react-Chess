@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Board from './Components/Board';
 import Pieces from './Components/Pieces';
@@ -7,9 +7,19 @@ import Pieces from './Components/Pieces';
 function App() {
   const [playerTurn,setPlayerTurn] = useState(1);
   const [martyred,setMartyred] = useState([]);
+  const [streamId,setStreamId] = useState("");
+  useEffect(()=>{
+    
+    setStreamId(prompt("Please enter a stream ID"));
+
+  },[]);
   return (
     <>
-    <div className="info-col">
+    {
+      streamId===""
+      ?<div></div>
+      :<div>
+      <div className="info-col">
         <div className="item">a</div>
         <div className="item">b</div>
         <div className="item">c</div>
@@ -31,7 +41,7 @@ function App() {
         <div className="item">8</div>
       </div>
       <div className="board-body">  
-        <Pieces player={playerTurn} setPlayer={setPlayerTurn} martyr={martyred} setMartyr={setMartyred}></Pieces>
+        <Pieces streamName={streamId} player={playerTurn} setPlayer={setPlayerTurn} martyr={martyred} setMartyr={setMartyred}></Pieces>
         <Board ></Board>
         
       </div>
@@ -56,6 +66,8 @@ function App() {
         })
       }
     </div>
+      </div>
+    }
     
     </>
   );
