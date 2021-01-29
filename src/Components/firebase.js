@@ -1,12 +1,12 @@
 import firebase from "firebase";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyCwgUrEcQnMcb98HSKXlSWJIMVVDwfavzw",
-  authDomain: "chess-d2080.firebaseapp.com",
-  projectId: "chess-d2080",
-  storageBucket: "chess-d2080.appspot.com",
-  messagingSenderId: "409752314162",
-  appId: "1:409752314162:web:42e1f7a43166362b12772b"
+  apiKey: "AIzaSyC_YW-uLtL_RXG2Yuj8le2tNj0loDOIQF0",
+    authDomain: "multiplayer-chess-301b6.firebaseapp.com",
+    projectId: "multiplayer-chess-301b6",
+    storageBucket: "multiplayer-chess-301b6.appspot.com",
+    messagingSenderId: "788667624867",
+    appId: "1:788667624867:web:e86d596e605ae07d15be16"
   };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
